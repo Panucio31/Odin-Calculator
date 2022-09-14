@@ -1,1 +1,28 @@
-// Write your styles
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator-container {
+  width: 600px;
+  display: grid;
+  height: 95vh;
+  border: 2px solid black;
+  justify-content: center;
+  border-radius: 10px;
+  grid-template-columns: repeat(4, 20%);
+  grid-template-areas: 
+  'display display display display';
+
+   .display-field {
+    grid-area: display;
+   }
+
+   .zero {
+    grid-column-start: 1;
+    grid-column-end: 3;
+   }
+   
+  
+}
