@@ -12,10 +12,32 @@ const num9 = document.querySelector(".nine").dataset.nine;
 const num = document.querySelector(".zero").dataset.zero;
 const numbers = document.querySelector("#num");
 
-const add = (a, b) => (a + b).toFixed(7);
+
+const add = (a, b) =>{ if (a - b === 0) {return a+b} return (a+b).toFixed(7)};
 const minus = (a, b) => (a - b).toFixed(7);
 const divide = (a, b) => (a / b).toFixed(7);
 const multiply = (a, b) => (a * b).toFixed(7);
+
+const operate = (a, b, operand) => {
+  if (operand === '+') {
+    return add(a, b);
+  } 
+  if (operand === '-') {
+    return minus(a, b);
+  }
+  if (operand === '/') {
+    if (b === 0) {
+      return 'Nooo!!'
+    }
+      return divide(a, b);
+  }
+  if (operand === '*') {
+    return multiply(a, b);
+  }
+
+}
+
+display.innerHTML = operate(12, 12.35, '+')
 
 const addBtn = document.querySelector(".add");
 addBtn.addEventListener("click", () => {
